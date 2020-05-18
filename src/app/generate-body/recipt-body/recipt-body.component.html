@@ -1,0 +1,58 @@
+<mat-card >
+    <div style="padding: 1.5%;">
+        <h2 class="mat-title">Enter details below</h2>
+
+        <form class="example-form">
+
+            <mat-form-field class="example-full-width" style="width: 100%;">
+                <mat-label>Name</mat-label>
+                <input matInput placeholder="Name" [(ngModel)] ="receipt.name" name="name">
+            </mat-form-field>
+            <br>
+            <mat-form-field class="example-full-width" style="width: 100%;">
+                <mat-label>Address</mat-label>
+                <textarea matInput placeholder="address" [(ngModel)] ="receipt.address" name="address"></textarea>
+            </mat-form-field>
+            <br>
+            <mat-form-field style="width:100%">
+                <mat-label>Payment Type</mat-label>
+                <mat-select [(ngModel)] ="receipt.payment_type"  name="payment">
+                    <mat-option *ngFor="let pay of payment_type" value="{{pay}}" >{{pay}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="example-full-width" style="width: 100%;">
+                <mat-label>Amount</mat-label>
+                <input matInput placeholder="Amount" [(ngModel)] ="receipt.amount" name="amount">
+            </mat-form-field>
+            <br>
+            <mat-form-field style="width: 100%;">
+                <mat-label>Choose a date</mat-label>
+                <input matInput [matDatepicker]="picker" [(ngModel)] ="receipt.date" name="date">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+              <br>
+            <mat-form-field class="example-full-width" style="width: 100%;">
+                <mat-label>Payee</mat-label>
+                <input matInput placeholder="Payee" [(ngModel)] ="receipt.receiver" name="payee">
+            </mat-form-field>
+
+            <div class="row">
+                <div class="col-sm">
+
+                    <button mat-raised-button matTooltip="Generate receipt for above data" class="col-xs-4 btn btn-primary btn-block" (click)="generateScript()" matRipple [matRippleColor]="rippleColor" >Generate Receipt</button>
+                </div>
+
+                <div class="col-sm">
+                    <button mat-raised-button class="col-xs-4 btn btn-primary btn-block" [disabled]="genShow" (click)="holdReceipt()" matTooltip="View the last generated Receipt" matRipple [matRippleColor]="rippleColor">View Generated</button>
+
+                </div>
+            </div>
+        </form>
+
+
+
+
+    </div>
+</mat-card>

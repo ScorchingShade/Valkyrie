@@ -1,0 +1,95 @@
+<div>
+<mat-card style="height: 50%; width: 97%;">
+    <!--<img [src]="invoiceImg" height="50%" width="100%">-->
+    <div id="printableArea">
+    <div style="text-align:center">
+        <h4 class="receiptValue">
+            Receipt ID - {{receipt.id}}
+        </h4>
+      </div>
+       
+      <ngx-qrcode style="text-align:center"
+            [elementType]="elementType" 
+            [value] = "value"
+            cssClass = "aclass"
+            errorCorrectionLevel = "L">
+      </ngx-qrcode>
+
+      <div class="container">
+        <div class="row" style="background-image: linear-gradient(to left,#565c5c, #d5d8df);">
+          <div class="col-sm">
+            Name
+          </div>
+          <div class="col-sm">
+            Address
+          </div>
+          <div class="col-sm">
+            Payment Type
+          </div>
+        </div>
+        
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            {{receipt.name}}
+          </div>
+          <div class="col-sm">
+            {{receipt.address}}
+          </div>
+          <div class="col-sm">
+            {{receipt.payment_type}}
+          </div>
+        </div>
+        
+      </div>
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    
+      
+      <div class="container" style="text-align: right;">
+        <div class="row">
+          <div class="col-sm">
+            Amount:
+          </div>
+          <div class="col-sm">
+            {{receipt.amount}}
+          </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm">
+              GST:
+            </div>
+            <div class="col-sm">
+              3.8%
+            </div>
+          </div>
+        
+
+          <div class="row">
+            <div class="col-sm">
+              Total:
+            </div>
+            <div class="col-sm">
+                {{total}}
+            </div>
+          </div>
+      </div>
+    </div>
+      <br>
+      <div style="text-align: center;">
+          <button mat-raised-button matTooltip="Print receipt for id {{receipt.id}}" class="col-xs-4 btn btn-primary btn-block" (click)="printReceipt()" matRipple [matRippleColor]="rippleColor" >Print Receipt</button>
+      </div>
+    
+</mat-card>
+
+</div>  
+
