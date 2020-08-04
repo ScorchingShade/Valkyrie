@@ -1,19 +1,41 @@
-<div style="padding: 1.2%;">
-<div class="jumbotron">
-    <h1 class="display-4">Welcome to Valkyrie</h1>
-    
-    <hr class="my-4">
-    <div class="btn-group container">
+<header class="v-header container">
+    <div class="fullscreen-video-wrap">
+        <video src=".\assets\vidbg.mp4" autoplay="true" loop="true">
 
-    <div class="col-sm-3">
-    
-        <button class="col-lg-12 btn btn-primary btn-block" (click)="generateBody()">Generate</button>
+        </video>
+    </div>
+    <div class="header-overlay"></div>
+    <div class="header-content text-md-center">
+        <h1>Welcome to Valkyrie</h1>
+        <br>
+        <p>The world is moving to a digital solution for all payments and why should it not! Not only does it reduce our carbon footprint, but also helps you to instantly increase your capabilities and reach for your business. Well we here at Valkyrie are
+            here to support you through this era change. Great invoicing solutions, catered just for your need! Contact us for best in market quote now!</p>
+
+        <a class="btn" routerLink="/about" routerLinkActive="active">Find out more!</a>
+
+
     </div>
 
-    <div class="col-sm-3">
-        <button class="col-lg-12 btn btn-primary btn-block" (click)="viewBody()">View</button>
-          
+</header>
+
+
+
+<div style="padding: 1.2%;">
+    <div class="jumbotron">
+        <h1 class="display-4">Welcome to Valkyrie</h1>
+
+        <hr class="my-4">
+        <div class="btn-group container">
+
+            <div class="col-sm-3">
+
+                <button class="col-lg-12 btn btn-primary btn-block" (click)="generateBody()">Generate</button>
+            </div>
+
+            <div class="col-sm-3">
+                <button class="col-lg-12 btn btn-primary btn-block" (click)="viewBody()">View</button>
+
+            </div>
         </div>
     </div>
-  </div>
 </div>

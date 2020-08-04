@@ -37,6 +37,8 @@ export class ViewDashboardComponent implements OnInit {
       
       let stringedData = "{\"Dl\":" + JSON.stringify(data) + "}";
 
+      console.log(stringedData)
+
       let jsonData = JSON.parse(stringedData);
 
       
@@ -86,6 +88,8 @@ export class ViewDashboardComponent implements OnInit {
       
    this.table.renderRows()
 
+   console.log("to delete"+deleteJson)
+   
    this._tapiService.deleteData(deleteJson).subscribe(data=>{
     let jsonString=JSON.stringify(data);
     let jsonParse=JSON.parse(jsonString); 

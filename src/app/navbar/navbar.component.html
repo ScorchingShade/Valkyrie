@@ -1,25 +1,27 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark" style="background: #213540;">
     <a class="navbar-brand" routerLink="/index" routerLinkActive="active">
-      <img src="assets\valkyrie_logo_clI_icon.ico" alt=""   >
+        <img src="assets\valkyrie_logo_clI_icon.ico" alt="">
     </a>
-  
-    <button class="navbar-toggler" type="button"
-            (click)="toggleNavbar()">
+
+    <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
       <span class="navbar-toggler-icon"></span>
     </button>
-  
-  
-    <div class="collapse navbar-collapse"
-         [ngClass]="{ 'show': toggleEvent }">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/generate" routerLinkActive="active">Generate</a>
-        </li>
 
-        <li class="nav-item">
-            <a class="nav-link" routerLink="/view" routerLinkActive="active">View</a>
-          </li>
-  
-      </ul>
+
+    <div class="collapse navbar-collapse" [ngClass]="{ 'show': toggleEvent }">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/about" routerLinkActive="active">About</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/generate" routerLinkActive="active">Generate</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/view" routerLinkActive="active">View</a>
+            </li>
+
+        </ul>
     </div>
-  </nav>
+</nav>

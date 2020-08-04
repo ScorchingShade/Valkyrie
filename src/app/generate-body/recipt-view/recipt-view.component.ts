@@ -13,7 +13,7 @@ export class ReciptViewComponent implements OnInit {
   showbutton:any;
 
 
- receipt:Receipt={id:"",name:"",address:"",amount:"",payment_type:"",date:"",receiver:""};
+ receipt={_id:"",id:"",name:"",address:"",amount:"",payment_type:"",date:"",receiver:""};
 
   total:any="";
 
@@ -51,13 +51,18 @@ export class ReciptViewComponent implements OnInit {
     
 
       let jsonData=JSON.stringify(data);
+      console.log("receiptData"+jsonData);
       let jsonIndex=JSON.parse(jsonData);
       
-      for(let i=0;i<jsonIndex.length;i++){
-        console.log(jsonIndex[i].id);
-        this.receipt=jsonIndex[i];
+      // for(let i=0;i<jsonIndex.length;i++){
+      //   console.log(jsonIndex[i].id);
+      //   this.receipt=jsonIndex[i];
+      //   this.total=(parseFloat(this.receipt.amount)*0.38)+parseFloat(this.receipt.amount);
+      // }
+
+        console.log(jsonIndex.id);
+        this.receipt=jsonIndex;
         this.total=(parseFloat(this.receipt.amount)*0.38)+parseFloat(this.receipt.amount);
-      }
       
       
     })

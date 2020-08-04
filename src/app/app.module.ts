@@ -25,9 +25,11 @@ import { ViewDashboardComponent } from './view-dashboard/view-dashboard.componen
 import { MatTableModule } from '@angular/material/table'
 import { MatPaginatorModule } from '@angular/material/paginator'
 import { MatSortModule } from '@angular/material/sort'
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { MatIconModule } from '@angular/material'
 import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { ReceiptShowViewComponent } from './receipt-show-view/receipt-show-view.component';
+import { AboutComponent } from './about/about.component';
 
 
 
@@ -42,6 +44,7 @@ import { ReceiptShowViewComponent } from './receipt-show-view/receipt-show-view.
     ReciptViewComponent,
     ViewDashboardComponent,
     ReceiptShowViewComponent,
+    AboutComponent,
     
   ],
   imports: [
@@ -54,6 +57,8 @@ import { ReceiptShowViewComponent } from './receipt-show-view/receipt-show-view.
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MDBBootstrapModule,
+    MDBBootstrapModule.forRoot(),
     FormsModule,
     MatTooltipModule,
     MatSnackBarModule,
